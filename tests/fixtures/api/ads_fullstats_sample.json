@@ -1,0 +1,205 @@
+[
+  {
+    "advertId": 22161678,
+    "atbs": 9,
+    "canceled": 0,
+    "clicks": 139,
+    "cpc": 4.76,
+    "cr": 0,
+    "ctr": 10.12,
+    "days": [
+      {
+        "date": "2025-01-07T00:00:00Z",
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 5,
+            "canceled": 0,
+            "clicks": 75,
+            "cpc": 3.58,
+            "cr": 0,
+            "ctr": 13.43,
+            "nms": [
+              {
+                "nmId": 100001,
+                "name": "Кроссовки тестовые",
+                "views": 475,
+                "clicks": 75,
+                "ctr": 13.43,
+                "cpc": 3.58,
+                "cr": 0,
+                "sum": 268.5,
+                "sum_price": 0,
+                "orders": 0,
+                "atbs": 5,
+                "shks": 0,
+                "canceled": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 268.5,
+            "sum_price": 0,
+            "views": 475
+          },
+          {
+            "appType": 64,
+            "atbs": 4,
+            "canceled": 0,
+            "clicks": 64,
+            "cpc": 6.05,
+            "cr": 0,
+            "ctr": 8.02,
+            "nms": [
+              {
+                "nmId": 100001,
+                "name": "Кроссовки тестовые",
+                "views": 337,
+                "clicks": 64,
+                "ctr": 8.02,
+                "cpc": 6.05,
+                "cr": 0,
+                "sum": 387.2,
+                "sum_price": 0,
+                "orders": 0,
+                "atbs": 4,
+                "shks": 0,
+                "canceled": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 387.2,
+            "sum_price": 0,
+            "views": 337
+          }
+        ],
+        "atbs": 9,
+        "canceled": 0,
+        "clicks": 139,
+        "cpc": 4.76,
+        "cr": 0,
+        "ctr": 10.12,
+        "orders": 0,
+        "shks": 0,
+        "sum": 655.7,
+        "sum_price": 0,
+        "views": 812
+      }
+    ],
+    "orders": 0,
+    "shks": 0,
+    "sum": 655.7,
+    "sum_price": 0,
+    "views": 812
+  },
+  {
+    "advertId": 28449281,
+    "atbs": 3,
+    "canceled": 0,
+    "clicks": 20,
+    "cpc": 15.0,
+    "cr": 10.0,
+    "ctr": 4.0,
+    "days": [
+      {
+        "date": "2025-01-07T00:00:00Z",
+        "apps": [
+          {
+            "appType": 32,
+            "atbs": 2,
+            "canceled": 0,
+            "clicks": 12,
+            "cpc": 12.5,
+            "cr": 16.67,
+            "ctr": 4.8,
+            "nms": [
+              {
+                "nmId": 100002,
+                "name": "Футболка тестовая",
+                "views": 150,
+                "clicks": 7,
+                "ctr": 4.67,
+                "cpc": 10.0,
+                "cr": 14.29,
+                "sum": 70.0,
+                "sum_price": 1000,
+                "orders": 1,
+                "atbs": 1,
+                "shks": 1,
+                "canceled": 0
+              },
+              {
+                "nmId": 100001,
+                "name": "Кроссовки тестовые",
+                "views": 100,
+                "clicks": 5,
+                "ctr": 5.0,
+                "cpc": 16.0,
+                "cr": 20.0,
+                "sum": 80.0,
+                "sum_price": 1500,
+                "orders": 1,
+                "atbs": 1,
+                "shks": 1,
+                "canceled": 0
+              }
+            ],
+            "orders": 2,
+            "shks": 2,
+            "sum": 150.0,
+            "sum_price": 2500,
+            "views": 250
+          },
+          {
+            "appType": 64,
+            "atbs": 1,
+            "canceled": 0,
+            "clicks": 8,
+            "cpc": 18.75,
+            "cr": 0,
+            "ctr": 3.2,
+            "nms": [
+              {
+                "nmId": 100002,
+                "name": "Футболка тестовая",
+                "views": 250,
+                "clicks": 8,
+                "ctr": 3.2,
+                "cpc": 18.75,
+                "cr": 0,
+                "sum": 150.0,
+                "sum_price": 0,
+                "orders": 0,
+                "atbs": 1,
+                "shks": 0,
+                "canceled": 0
+              }
+            ],
+            "orders": 0,
+            "shks": 0,
+            "sum": 150.0,
+            "sum_price": 0,
+            "views": 250
+          }
+        ],
+        "atbs": 3,
+        "canceled": 0,
+        "clicks": 20,
+        "cpc": 15.0,
+        "cr": 10.0,
+        "ctr": 4.0,
+        "orders": 2,
+        "shks": 2,
+        "sum": 300.0,
+        "sum_price": 2500,
+        "views": 500
+      }
+    ],
+    "orders": 2,
+    "shks": 2,
+    "sum": 300.0,
+    "sum_price": 2500,
+    "views": 500
+  }
+]

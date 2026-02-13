@@ -1,0 +1,103 @@
+{
+  "data": {
+    "products": [
+      {
+        "product": {
+          "nmId": 100001,
+          "vendorCode": "ART-001",
+          "title": "Кроссовки тестовые",
+          "brandName": "TestBrand",
+          "subjectId": 105,
+          "subjectName": "Кроссовки"
+        },
+        "statistic": {
+          "selected": {
+            "openCount": 500,
+            "cartCount": 50,
+            "orderCount": 10,
+            "orderSum": 15000,
+            "buyoutCount": 8,
+            "buyoutSum": 12000,
+            "cancelCount": 2,
+            "cancelSum": 3000,
+            "avgPrice": 1500,
+            "avgOrdersCountPerDay": 0.7,
+            "addToWishlist": 20,
+            "conversions": {
+              "addToCartPercent": 10,
+              "cartToOrderPercent": 20,
+              "buyoutPercent": 80
+            }
+          },
+          "past": {
+            "openCount": 400,
+            "cartCount": 40,
+            "orderCount": 8,
+            "orderSum": 12000,
+            "buyoutCount": 6,
+            "buyoutSum": 9000,
+            "cancelCount": 1,
+            "cancelSum": 1500,
+            "avgPrice": 1500,
+            "avgOrdersCountPerDay": 0.6,
+            "addToWishlist": 15,
+            "conversions": {
+              "addToCartPercent": 10,
+              "cartToOrderPercent": 20,
+              "buyoutPercent": 75
+            }
+          }
+        }
+      },
+      {
+        "product": {
+          "nmId": 100002,
+          "vendorCode": "ART-002",
+          "title": "Футболка тестовая",
+          "brandName": "TestBrand",
+          "subjectId": 64,
+          "subjectName": "Футболки"
+        },
+        "statistic": {
+          "selected": {
+            "openCount": 300,
+            "cartCount": 20,
+            "orderCount": 5,
+            "orderSum": 5000,
+            "buyoutCount": 4,
+            "buyoutSum": 4000,
+            "cancelCount": 1,
+            "cancelSum": 1000,
+            "avgPrice": 1000,
+            "avgOrdersCountPerDay": 0.35,
+            "addToWishlist": 10,
+            "conversions": {
+              "addToCartPercent": 6.67,
+              "cartToOrderPercent": 25,
+              "buyoutPercent": 80
+            }
+          },
+          "past": {
+            "openCount": 350,
+            "cartCount": 25,
+            "orderCount": 6,
+            "orderSum": 6000,
+            "buyoutCount": 5,
+            "buyoutSum": 5000,
+            "cancelCount": 0,
+            "cancelSum": 0,
+            "avgPrice": 1000,
+            "avgOrdersCountPerDay": 0.43,
+            "addToWishlist": 12,
+            "conversions": {
+              "addToCartPercent": 7.14,
+              "cartToOrderPercent": 24,
+              "buyoutPercent": 83.3
+            }
+          }
+        }
+      }
+    ],
+    "currency": "RUB"
+  }
+}
