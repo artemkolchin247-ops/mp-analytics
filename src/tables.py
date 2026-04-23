@@ -528,16 +528,17 @@ def build_price_lag(df: pd.DataFrame) -> pd.DataFrame:
             result["Разница чеков п2, %"].abs() > 10
         ).map({True: "⚠️", False: ""})
 
+    # Если колонок чеков нет — нечего показывать
+    if co2 not in result.columns or cs2 not in result.columns:
+        return pd.DataFrame()
+
     # Фильтры: убираем строки где либо цен нет, либо разница чеков < 1%
-    # Проверяем наличие цен
     has_prices = (result[co2].notna() & result[cs2].notna() &
                   (result[co2] > 0) & (result[cs2] > 0))
 
-    # Проверяем разницу чеков >= 1%
     diff_pct_col = "Разница чеков п2, %"
     has_diff = result[diff_pct_col].abs() >= 1.0 if diff_pct_col in result.columns else pd.Series(False, index=result.index)
 
-    # Применяем фильтры
     result = result[has_prices & has_diff]
 
     # Сортировка по марже п2
