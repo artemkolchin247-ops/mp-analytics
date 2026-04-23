@@ -29,7 +29,7 @@ def export_tables_to_xlsx(tables: Dict[str, pd.DataFrame]) -> BytesIO:
             worksheet = writer.sheets[sheet_name]
             for i, col in enumerate(df.columns):
                 max_len = max(
-                    df[col].astype(str).map(len).max(),
+                    df[col].astype(str).str.len().max(),
                     len(str(col)),
                 ) + 2
                 max_len = min(max_len, 50)
