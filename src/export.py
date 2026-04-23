@@ -44,34 +44,51 @@ import math
 from typing import Iterable, Optional
 
 
-def export_brief_to_csv(tables: Dict[str, pd.DataFrame], export_spec: Optional[Dict[str, Dict]] = None) -> bytes:
+def export_brief_to_csv(
+    tables: Dict[str, pd.DataFrame],
+    export_spec: Optional[Dict[str, Dict]] = None,
+    meta: Optional[str] = None,
+    legends: Optional[Dict[str, str]] = None,
+) -> bytes:
     """
     Экспортирует словарь таблиц в один CSV (UTF-8) с маркерами начала/конца таблиц.
 
-    Формат блока для каждой таблицы:
+    Формат файла:
+    ###META
+    <глобальный контекст для ИИ>
+    ###END_META
+
     ###TABLE: <name>
+    ###LEGEND
+    <пояснение к таблице>
+    ###END_LEGEND
     ###COLUMNS
-    col1,col2,...    <- колоноки (одна строка)
-    <data rows>       <- данные без заголовка (header=False)
+    col1,col2,...
+    <data rows>
     ###END_TABLE
 
-    Правила форматирования:
-    - percent_cols для каждой таблицы можно задать в export_spec[name]['percent_cols'] (list of column names)
-    - если не задано — автодетект по токенам в названии колонки
-    - проценты: округлять до 1 знака (вывод как строка, дробная часть через запятую)
-    - остальные числовые значения: округлять до целого и выводить без десятичных
-    - строки, даты и нечисловые значения — без изменений
-    - если значение начинается с '###' — экранируем префиксом "'"
+    Параметры:
+    - meta: строка с глобальным контекстом (определения периодов, формулы, флаги)
+    - legends: dict {table_name: legend_text} — пояснение к каждой таблице
+    - export_spec: dict {table_name: {'percent_cols': [...]}} — явное указание процентных колонок
 
-    Возвращает: bytes (UTF-8)
+    Числа: проценты — до 1 знака с запятой-разделителем (8,5); остальные — целые.
     """
     if export_spec is None:
         export_spec = {}
+    if legends is None:
+        legends = {}
 
     # Токены для автодетекта процентов
     pct_tokens = ["%", "процент", "доля", "ctr", "cvr", "cr", "conv", "conversion", "dr", "drr"]
 
     sio = io.StringIO()
+
+    # Глобальный мета-блок (определения, формулы, флаги)
+    if meta:
+        sio.write("###META\n")
+        sio.write(meta.strip() + "\n")
+        sio.write("###END_META\n\n")
 
     def _is_percent_col(col: str, spec_cols: Optional[Iterable[str]] = None) -> bool:
         if spec_cols:
@@ -144,6 +161,10 @@ def export_brief_to_csv(tables: Dict[str, pd.DataFrame], export_spec: Optional[D
 
         # Write block markers and columns line (raw, not CSV-quoted)
         sio.write(f"###TABLE: {name}\n")
+        if name in legends and legends[name]:
+            sio.write("###LEGEND\n")
+            sio.write(legends[name].strip() + "\n")
+            sio.write("###END_LEGEND\n")
         sio.write("###COLUMNS\n")
         # Columns line: simple comma-joined names
         col_line = ",".join([str(c) for c in tdf.columns])
