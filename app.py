@@ -1140,11 +1140,8 @@ with tabs[tab_idx]:
             )
     elif has_wb:
         st.subheader("WB — Краткая")
-        # Передаём информацию о том, что есть воронка
-        _render_brief(df_wb if df_wb is not None else pd.DataFrame(), "WB", is_wb=True, wb_has_funnel=has_funnel)
-        if has_funnel:
-            funnel_df_to_show = df_wb_merged if df_wb_merged is not None else df_wb
-            _render_funnel_brief(funnel_df_to_show, format_options={"decimals": 1, "thousand_sep": " "})
+        df_wb_for_brief = df_wb_merged if df_wb_merged is not None else df_wb
+        _render_brief(df_wb_for_brief, "WB", is_wb=True, wb_has_funnel=has_funnel, wb_has_ads=has_ads)
     elif has_ozon:
         st.subheader("Ozon — Краткая")
         _render_brief(df_ozon, "Ozon", is_wb=False)
