@@ -827,6 +827,20 @@ def _render_detailed(df: pd.DataFrame, platform: str, is_wb: bool,
     # Экспорт
     st.divider()
     if tables_for_export:
+        date_str = pd.Timestamp("today").strftime("%Y%m%d")
+
+        try:
+            csv_bytes = export_brief_to_csv(tables_for_export)
+            st.download_button(
+                label="📥 Скачать Детальная сводка (CSV для ИИ)",
+                data=csv_bytes,
+                file_name=f"{platform}_детальная_{date_str}.csv",
+                mime="text/csv; charset=utf-8",
+                key=f"export_csv_{platform}",
+            )
+        except Exception as e:
+            st.warning(f"Не удалось подготовить CSV экспорт: {e}")
+
         xlsx_buf = export_tables_to_xlsx(tables_for_export)
         st.download_button(
             label="📥 Export to Excel",
