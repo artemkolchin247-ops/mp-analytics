@@ -764,6 +764,8 @@ def _render_detailed(df: pd.DataFrame, platform: str, is_wb: bool,
     if not pl.empty:
         display_copyable_table(pl)
         tables_for_export["Лаг цен"] = pl
+    else:
+        st.info("Нет значимых расхождений чеков (разница < 1%).")
 
     # 6) Цветовые аномалии
     st.subheader("6. Цветовые аномалии (Color code + Коллекция)")
